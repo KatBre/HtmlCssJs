@@ -92,8 +92,8 @@ class Cyclist {
         console.log(
             // Elvis operator
             this.helmet === true
-            ? 'Cyclist wear helmet (:'
-            : 'Cyclist does not wear helmet :c');
+                ? 'Cyclist wear helmet (:'
+                : 'Cyclist does not wear helmet :c');
     }
 
     isCyclistFast() {
@@ -125,10 +125,29 @@ console.log(cyclists.filter((el, index) => el.helmet === true));
 
 const cyclistsOnTour = cyclists.map((el, index) => {
     const cyclist = el;
-    cyclist.startNumber = index+1;
+    cyclist.startNumber = index + 1;
     return cyclist;
 });
 console.log(cyclistsOnTour);
+
+const data = new Promise((resolve, reject) => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => resolve(response.json()))
+        .catch(error => reject(error))        
+});
+
+data
+    .then(dataFromAPI => {
+        const userTask = dataFromAPI.filter((el) => el.userId === 2);
+        const documentContainer = document.querySelector('#todoList');
+        userTask.forEach((el) => {
+            const htmlEl = document.createElement('p');
+            htmlEl.innerText = el.title;
+            documentContainer.appendChild(htmlEl);
+        })
+    })
+    .catch(err => console.log(err));
+
 
 
 

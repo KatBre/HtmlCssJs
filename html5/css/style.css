@@ -1,0 +1,154 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10px;
+}
+
+#navigation {
+    height: 100px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    /* góra - dół*/
+    justify-content: center;
+    /* lewo - prawo*/
+    /* \/ */
+    position: fixed;
+    width: 100vw;
+    box-sizing: border-box;
+    top: 0px;
+    padding: 60px 10px;
+    transition: .5s all;
+    /* DOM - Document Object Model */
+}
+
+#navigation ul {
+    list-style: none;
+    display: flex;
+    /*default => dispaly: block; /inline; */
+    /*display: grid; */
+}
+
+#navigation ul li a {
+    background-color: lightblue;
+    border-radius: 15pc;
+    margin: 10px;
+    color: darkslategrey;
+    padding: 10px;
+    text-decoration: none;
+    transition: .5s all;
+    /* height: 24px;
+    width: 24px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid gray; */
+}
+
+#navigation ul li a:hover {
+    color: lightblue;
+    background-color: darkslategrey;
+}
+
+
+/* <p class="paragraph"></p> => .paragraph */
+
+
+/* <p id="paragraph"></p> => #paragraph */
+
+
+/* #contactForm {
+    color: red !important;
+}
+.contactForm {
+    color: green;
+} */
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+main:first-of-type {
+    margin-top: 120px;
+}
+
+article {
+    width: 20rem;
+    border: 1px solid lightcoral;
+    padding: 2rem 1rem;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactForm label {
+    width: 350px;
+    margin: 5px 0px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before {
+    content: 'Podaj swoje imię';
+    position: absolute;
+    top: -15px;
+    background-color: darkgray;
+    color: darkred;
+    width: 100px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.tooltip:hover::before {
+    visibility: visible;
+}
+
+#radioButtonContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+[for=r1],
+[for=r2] {
+    width: 80px !important;
+}
+
+input[type=submit] {
+    width: 80px;
+    margin-top: 20px;
+}
+
+#footer {
+    background-color: lightsteelblue;
+    color: rgb(13, 41, 87);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 100% szerokości ekranu == 100vw */
+
+
+/* 100% wysokości ekranu == 100vh */
+
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    img {
+        width: 300px;
+    }
+    article {
+        font-size: 12px;
+        font-weight: 300;
+        width: 100%;
+    }
+}

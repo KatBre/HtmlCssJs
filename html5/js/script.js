@@ -124,7 +124,9 @@ console.log(cyclists);
 console.log(cyclists.filter((el, index) => el.helmet === true));
 
 const cyclistsOnTour = cyclists.map((el, index) => {
-    return el.startNumber = index
+    const cyclist = el;
+    cyclist.startNumber = index+1;
+    return cyclist;
 });
 console.log(cyclistsOnTour);
 
